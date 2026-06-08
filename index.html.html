@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Montessori Academies | USA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #6B1B2A;
+    --burgundy-dark: #4A1019;
+    --burgundy-mid: #8C2438;
+    --burgundy-light: #C4677A;
+    --burgundy-pale: #F5EBEC;
+    --cream: #FAF7F2;
+    --warm-white: #FFFDF9;
+    --gold: #C9A84C;
+    --gold-light: #E8D5A0;
+    --text-dark: #1A0D10;
+    --text-mid: #5C3340;
+    --text-light: #9A7882;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,253,249,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107,27,42,0.12);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--burgundy-dark);
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+    text-decoration: none;
+  }
+  .nav-logo span { display: block; font-size: 0.65rem; font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-top: 1px; }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--burgundy); }
+  .nav-cta {
+    background: var(--burgundy);
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+    letter-spacing: 0.08em;
+  }
+  .nav-cta:hover { background: var(--burgundy-dark) !important; }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--burgundy); transition: all 0.3s; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 6% 80px 10%;
+    background: var(--warm-white);
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy-light);
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300;
+    color: var(--burgundy-dark);
+    line-height: 1.12;
+    margin-bottom: 28px;
+  }
+  .hero-title em { font-style: italic; color: var(--burgundy-mid); }
+  .hero-body {
+    font-size: 1rem; font-weight: 300; line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 420px;
+    margin-bottom: 44px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--burgundy);
+    color: white;
+    padding: 14px 32px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--burgundy-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--burgundy);
+    padding: 13px 30px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--burgundy);
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--burgundy-pale); }
+  .hero-stats {
+    display: flex; gap: 40px;
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(107,27,42,0.1);
+  }
+  .hero-stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--burgundy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light);
+  }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--burgundy-dark);
+  }
+  .hero-img-grid {
+    display: grid; grid-template-rows: 1fr 1fr; height: 100%;
+  }
+  .hero-img-top {
+    background: url('https://images.unsplash.com/photo-1588072432836-e10032774350?w=900&q=80') center/cover no-repeat;
+    position: relative;
+  }
+  .hero-img-bottom {
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80') center/cover no-repeat;
+    position: relative;
+  }
+  .hero-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(107,27,42,0.35) 0%, transparent 60%);
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 28px; left: 28px;
+    background: rgba(255,253,249,0.95);
+    padding: 16px 20px;
+    border-left: 3px solid var(--gold);
+    backdrop-filter: blur(8px);
+  }
+  .hero-badge-text {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.4;
+  }
+  .hero-badge-attr {
+    font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-top: 6px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .marquee-strip {
+    background: var(--burgundy);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex; gap: 64px;
+    animation: marquee 28s linear infinite;
+  }
+  .marquee-item {
+    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; gap: 24px;
+  }
+  .marquee-item::after {
+    content: '✦';
+    font-size: 0.5rem;
+    color: var(--gold);
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 5%; }
+  .section-eyebrow {
+    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--burgundy-light);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--burgundy-dark);
+    line-height: 1.18;
+  }
+
+  /* ─── ABOUT / PHILOSOPHY ─── */
+  .philosophy {
+    background: var(--cream);
+  }
+  .philosophy-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;
+  }
+  .philosophy-img {
+    position: relative;
+  }
+  .philosophy-img img {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover;
+    border-radius: 1px;
+  }
+  .philosophy-img-accent {
+    position: absolute;
+    bottom: -24px; right: -24px;
+    width: 60%; aspect-ratio: 1;
+    background: url('https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=400&q=80') center/cover;
+    border: 6px solid var(--cream);
+  }
+  .philosophy-content { padding-right: 20px; }
+  .philosophy-content .section-title { margin-bottom: 28px; }
+  .philosophy-content p {
+    font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+  .philosophy-pillars {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    margin-top: 36px;
+  }
+  .pillar {
+    padding: 20px;
+    border-left: 2px solid var(--burgundy-pale);
+    transition: border-color 0.2s;
+  }
+  .pillar:hover { border-color: var(--burgundy); }
+  .pillar-icon { font-size: 1.4rem; margin-bottom: 8px; }
+  .pillar-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem; font-weight: 400;
+    color: var(--burgundy-dark);
+    margin-bottom: 6px;
+  }
+  .pillar-text { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
+
+  /* ─── PROGRAMS ─── */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    margin-top: 56px;
+    background: rgba(107,27,42,0.06);
+  }
+  .program-card {
+    background: var(--warm-white);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .program-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--burgundy);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .program-card:hover::before { transform: scaleX(1); }
+  .program-card:hover { background: var(--burgundy-pale); }
+  .program-age {
+    font-size: 0.65rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+  .program-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem; font-weight: 400;
+    color: var(--burgundy-dark);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .program-desc { font-size: 0.87rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+  .program-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 24px;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--burgundy);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .program-link:hover { gap: 10px; }
+  .program-link svg { width: 14px; height: 14px; }
+
+  /* ─── SCHOOLS ─── */
+  .schools { background: var(--burgundy-dark); }
+  .schools .section-eyebrow { color: var(--gold-light); }
+  .schools .section-eyebrow::before { background: var(--gold); }
+  .schools .section-title { color: var(--cream); }
+  .schools-intro { font-size: 1rem; font-weight: 300; color: rgba(250,247,242,0.6); max-width: 500px; margin-top: 16px; line-height: 1.7; }
+  .schools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 56px;
+  }
+  .school-card {
+    border: 1px solid rgba(250,247,242,0.12);
+    padding: 32px 28px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+  .school-card:hover {
+    background: rgba(250,247,242,0.05);
+    border-color: rgba(201,168,76,0.5);
+    transform: translateY(-3px);
+  }
+  .school-city {
+    font-size: 0.65rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .school-name {
+    font-family: var(--font-serif);
+    font-size: 1.3rem; font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .school-type {
+    font-size: 0.78rem; color: rgba(250,247,242,0.45); font-weight: 300;
+  }
+  .school-arrow {
+    position: absolute; top: 28px; right: 24px;
+    width: 28px; height: 28px;
+    border: 1px solid rgba(250,247,242,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(250,247,242,0.4);
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .school-card:hover .school-arrow {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ─── TOUR BOOKING ─── */
+  .book-tour {
+    background: var(--cream);
+  }
+  .book-tour-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start;
+  }
+  .tour-info .section-title { margin-bottom: 20px; }
+  .tour-info p {
+    font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--text-mid);
+    margin-bottom: 32px;
+  }
+  .tour-features { display: flex; flex-direction: column; gap: 16px; }
+  .tour-feature { display: flex; align-items: flex-start; gap: 14px; }
+  .tour-feature-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px; flex-shrink: 0;
+  }
+  .tour-feature-text { font-size: 0.87rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+  .tour-feature-text strong { font-weight: 500; color: var(--text-dark); }
+
+  /* ─── BOOKING FORM ─── */
+  .booking-form {
+    background: white;
+    padding: 44px 40px;
+    border: 1px solid rgba(107,27,42,0.1);
+    box-shadow: 0 4px 40px rgba(107,27,42,0.06);
+  }
+  .form-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem; font-weight: 400;
+    color: var(--burgundy-dark);
+    margin-bottom: 8px;
+  }
+  .form-subtitle {
+    font-size: 0.82rem; color: var(--text-light); margin-bottom: 32px; font-weight: 300;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-mid);
+    margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    background: var(--warm-white);
+    border: 1px solid rgba(107,27,42,0.15);
+    border-radius: 1px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--burgundy); background: white; }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B1B2A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-check {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.82rem; color: var(--text-mid); font-weight: 300; line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .form-check input[type="checkbox"] {
+    width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px;
+    accent-color: var(--burgundy);
+  }
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--burgundy);
+    color: white;
+    font-family: var(--font-sans);
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    border: none; cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .form-submit:hover { background: var(--burgundy-dark); transform: translateY(-1px); }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 48px 20px;
+  }
+  .form-success-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+  .form-success h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem; font-weight: 300;
+    color: var(--burgundy-dark);
+    margin-bottom: 10px;
+  }
+  .form-success p {
+    font-size: 0.9rem; color: var(--text-mid); font-weight: 300; line-height: 1.7;
+  }
+
+  /* ─── PROGRAM CARD PHOTOS ─── */
+  .program-card-img {
+    width: calc(100% + 72px);
+    margin: -44px -36px 28px;
+    height: 200px;
+    overflow: hidden;
+  }
+  .program-card-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .program-card:hover .program-card-img img { transform: scale(1.04); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--burgundy-dark);
+    padding: 72px 5% 40px;
+    color: rgba(250,247,242,0.6);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(250,247,242,0.08);
+    margin-bottom: 32px;
+  }
+  .footer-brand-name {
+    font-family: var(--font-serif);
+    font-size: 1.2rem; font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .footer-brand-sub {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .footer-tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem; color: rgba(250,247,242,0.45); line-height: 1.6;
+  }
+  .footer-col-title {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 0.82rem; font-weight: 300; color: rgba(250,247,242,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.72rem; color: rgba(250,247,242,0.3);
+  }
+
+  /* ─── MOBILE NAV ─── */
+  .mobile-menu {
+    display: none;
+    position: fixed; inset: 0; z-index: 99;
+    background: var(--warm-white);
+    padding: 100px 8% 48px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--font-serif);
+    font-size: 2.2rem; font-weight: 300;
+    color: var(--burgundy-dark);
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(107,27,42,0.08);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--burgundy); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 6%; text-align: center; align-items: center; }
+    .hero-body { max-width: 100%; }
+    .hero-stats { justify-content: center; }
+    .philosophy-inner { grid-template-columns: 1fr; }
+    .philosophy-img { display: none; }
+    .book-tour-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 72px 5%; }
+  }
+  @media (max-width: 600px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .hero-stats { gap: 24px; }
+    .booking-form { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    International Montessori Academies
+    <span>of the United States</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#schools">Our Schools</a>
+    <a href="#book-tour" class="nav-cta">Book a Tour</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger" aria-label="Open menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#programs" onclick="closeMobile()">Programs</a>
+  <a href="#schools" onclick="closeMobile()">Our Schools</a>
+  <a href="#book-tour" onclick="closeMobile()">Book a Tour</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding: 0;">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Education from the Inside Out</p>
+    <h1 class="hero-title">
+      Where children learn<br>
+      through <em>doing</em>
+    </h1>
+    <p class="hero-body">
+      International Montessori Academies nurtures every child's natural curiosity in a loving, safe, and purposeful environment — across 7 campuses in California and Nevada.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#book-tour">
+        Book a Tour
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a class="btn-secondary" href="#about">Our Philosophy</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Campuses</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">30+</div>
+        <div class="hero-stat-label">Years Serving</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">K–6</div>
+        <div class="hero-stat-label">Grade Levels</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-grid">
+      <div class="hero-img-top">
+        <div class="hero-img-overlay"></div>
+      </div>
+      <div class="hero-img-bottom">
+        <div class="hero-img-overlay"></div>
+        <div class="hero-badge">
+          <div class="hero-badge-text">"The love of learning begins<br>in the earliest years."</div>
+          <div class="hero-badge-attr">Maria Montessori</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Child-Led Discovery</span>
+    <span class="marquee-item">Hands-On Learning</span>
+    <span class="marquee-item">Montessori Method</span>
+    <span class="marquee-item">Joyful Classrooms</span>
+    <span class="marquee-item">Whole-Child Development</span>
+    <span class="marquee-item">Certified Educators</span>
+    <span class="marquee-item">Community of Care</span>
+    <span class="marquee-item">Child-Led Discovery</span>
+    <span class="marquee-item">Hands-On Learning</span>
+    <span class="marquee-item">Montessori Method</span>
+    <span class="marquee-item">Joyful Classrooms</span>
+    <span class="marquee-item">Whole-Child Development</span>
+    <span class="marquee-item">Certified Educators</span>
+    <span class="marquee-item">Community of Care</span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="about">
+  <div class="philosophy-inner">
+    <div class="philosophy-img">
+      <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600&q=80" alt="Teacher guiding a child at a Montessori workmat">
+      <div class="philosophy-img-accent" style="background-image: url('https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&q=80');"></div>
+    </div>
+    <div class="philosophy-content">
+      <p class="section-eyebrow">Our Philosophy</p>
+      <h2 class="section-title">A learning environment built on love, safety, and wonder</h2>
+      <p>
+        Developed by Dr. Maria Montessori in the early 1900s, the Montessori method places the child at the center of their own education. Rather than passive instruction, children engage actively with specially designed materials that build independence, concentration, and a genuine love of learning.
+      </p>
+      <p>
+        Our educators are certified, experienced, and deeply committed — to each child, to the community, and to the principle that every human being deserves a dignified and joyful start.
+      </p>
+      <div class="philosophy-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🌱</div>
+          <div class="pillar-title">Child-Led</div>
+          <div class="pillar-text">Children choose activities that meet their developmental readiness and curiosity.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <div class="pillar-title">Community</div>
+          <div class="pillar-text">Mixed-age classrooms build empathy, tolerance, and peer mentorship.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🔬</div>
+          <div class="pillar-title">Hands-On</div>
+          <div class="pillar-text">Concrete materials make abstract concepts tangible and memorable.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">❤️</div>
+          <div class="pillar-title">Whole Child</div>
+          <div class="pillar-text">Emotional, spiritual, and academic growth are equally valued here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" style="background: var(--warm-white);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p class="section-eyebrow">What We Offer</p>
+    <h2 class="section-title">Programs for every stage of childhood</h2>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-card-img">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80" alt="Young children engaged in Montessori activities">
+        </div>
+        <p class="program-age">Ages 2.5 – 6</p>
+        <h3 class="program-name">Primary Toddler Program</h3>
+        <p class="program-desc">A carefully prepared environment where the youngest learners develop language, fine motor skills, and social foundations through purposeful play and discovery.</p>
+        <a href="#book-tour" class="program-link">
+          Learn more
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="program-card">
+        <div class="program-card-img">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=700&q=80" alt="Elementary students working with Montessori materials">
+        </div>
+        <p class="program-age">Ages 6 – 9</p>
+        <h3 class="program-name">Lower Elementary</h3>
+        <p class="program-desc">Expanding minds through cosmic education — an integrated curriculum of language arts, mathematics, science, history, and the arts that honors natural curiosity.</p>
+        <a href="#book-tour" class="program-link">
+          Learn more
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="program-card">
+        <div class="program-card-img">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80" alt="Older students collaborating on a project">
+        </div>
+        <p class="program-age">Ages 9 – 12</p>
+        <h3 class="program-name">Upper Elementary K–6</h3>
+        <p class="program-desc">Advanced inquiry, research projects, and collaborative learning that develop critical thinking, self-governance, and real-world problem solving.</p>
+        <a href="#book-tour" class="program-link">
+          Learn more
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOOLS -->
+<section class="schools" id="schools">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p class="section-eyebrow">Find a Campus</p>
+    <h2 class="section-title">Our Schools</h2>
+    <p class="schools-intro">Seven campuses across Southern California and Las Vegas, each led by dedicated directors and staff committed to the Montessori promise.</p>
+    <div class="schools-grid">
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Costa Mesa, CA</p>
+        <h3 class="school-name">Costa Mesa Primary</h3>
+        <p class="school-type">Ages 2.5 – 6 · Primary Montessori</p>
+      </a>
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Costa Mesa, CA</p>
+        <h3 class="school-name">Costa Mesa Elementary K–6</h3>
+        <p class="school-type">Ages 6–12 · Elementary Montessori</p>
+      </a>
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Irvine, CA</p>
+        <h3 class="school-name">Irvine Primary-Elementary</h3>
+        <p class="school-type">Ages 2.5–12 · Full Primary + Elementary</p>
+      </a>
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Las Vegas, NV</p>
+        <h3 class="school-name">Las Vegas Primary-Elementary</h3>
+        <p class="school-type">Ages 2.5–12 · Full Primary + Elementary</p>
+      </a>
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Newport Beach, CA</p>
+        <h3 class="school-name">Newport Beach Primary</h3>
+        <p class="school-type">Ages 2.5 – 6 · Primary Montessori</p>
+      </a>
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Newport Beach, CA</p>
+        <h3 class="school-name">Newport Beach Elementary</h3>
+        <p class="school-type">Ages 6–12 · Elementary Montessori</p>
+      </a>
+      <a href="#book-tour" class="school-card">
+        <div class="school-arrow">→</div>
+        <p class="school-city">Orange, CA</p>
+        <h3 class="school-name">Orange Primary</h3>
+        <p class="school-type">Ages 2.5 – 6 · Primary Montessori</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK A TOUR -->
+<section class="book-tour" id="book-tour">
+  <div class="book-tour-inner">
+    <div class="tour-info">
+      <p class="section-eyebrow">Visit Us</p>
+      <h2 class="section-title">See our classrooms for yourself</h2>
+      <p>
+        The best way to understand the Montessori difference is to experience it. Schedule a guided tour and see our prepared environments, meet our educators, and ask anything on your mind.
+      </p>
+      <div class="tour-features">
+        <div class="tour-feature">
+          <div class="tour-feature-dot"></div>
+          <p class="tour-feature-text"><strong>30-minute guided walk-through</strong> of active classrooms during the school day</p>
+        </div>
+        <div class="tour-feature">
+          <div class="tour-feature-dot"></div>
+          <p class="tour-feature-text"><strong>Meet the director</strong> and ask questions about curriculum, daily schedule, and enrollment</p>
+        </div>
+        <div class="tour-feature">
+          <div class="tour-feature-dot"></div>
+          <p class="tour-feature-text"><strong>No pressure, no commitment</strong> — just an honest look at what we offer your family</p>
+        </div>
+        <div class="tour-feature">
+          <div class="tour-feature-dot"></div>
+          <p class="tour-feature-text"><strong>Tours available Monday–Friday</strong>, 9:00 AM – 11:00 AM at most campuses</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-form" id="bookingFormWrapper">
+      <h3 class="form-title">Schedule Your Tour</h3>
+      <p class="form-subtitle">We'll confirm your visit within one business day.</p>
+
+      <div id="formContent">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Maria">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Montessori">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(714) 555-0100">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="campus">Preferred Campus</label>
+            <select id="campus">
+              <option value="">Select a campus…</option>
+              <option>Costa Mesa Primary</option>
+              <option>Costa Mesa Elementary K–6</option>
+              <option>Irvine Primary-Elementary</option>
+              <option>Las Vegas Primary-Elementary</option>
+              <option>Newport Beach Primary</option>
+              <option>Newport Beach Elementary</option>
+              <option>Orange Primary</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="childage">Child's Age</label>
+            <select id="childage">
+              <option value="">Select age…</option>
+              <option>Under 2.5 years</option>
+              <option>2.5 – 3 years</option>
+              <option>3 – 4 years</option>
+              <option>4 – 5 years</option>
+              <option>5 – 6 years</option>
+              <option>Kindergarten</option>
+              <option>Grade 1–3</option>
+              <option>Grade 4–6</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <select id="time">
+              <option value="">Select time…</option>
+              <option>9:00 AM</option>
+              <option>9:30 AM</option>
+              <option>10:00 AM</option>
+              <option>10:30 AM</option>
+              <option>11:00 AM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="notes">Questions or Notes (optional)</label>
+          <textarea id="notes" placeholder="Anything you'd like us to know before your visit…"></textarea>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="consent" checked>
+          <label for="consent">I'd like to receive occasional updates from International Montessori Academies about enrollment and events.</label>
+        </div>
+        <button class="form-submit" onclick="submitTour()">Request My Tour →</button>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">🌿</div>
+        <h3>Tour Request Received!</h3>
+        <p>Thank you. A member of our team at your chosen campus will be in touch within one business day to confirm your visit. We look forward to meeting your family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">International Montessori Academies</div>
+      <div class="footer-brand-sub">United States of America</div>
+      <div class="footer-tagline">"Education from the Inside Out"<br>— providing loving, safe, and purposeful<br>environments since 1994.</div>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <div class="footer-links">
+        <a href="#about">About Us</a>
+        <a href="#about">Our Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#schools">Our Schools</a>
+        <a href="#book-tour">Tuition &amp; Fees</a>
+        <a href="#book-tour">Enrollment</a>
+        <a href="#">Careers</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Our Schools</p>
+      <div class="footer-links">
+        <a href="#">Costa Mesa Primary</a>
+        <a href="#">Costa Mesa K–6</a>
+        <a href="#">Irvine Primary-El.</a>
+        <a href="#">Las Vegas</a>
+        <a href="#">Newport Beach Primary</a>
+        <a href="#">Newport Beach El.</a>
+        <a href="#">Orange Primary</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <div class="footer-links">
+        <a href="#book-tour">Schedule a Tour</a>
+        <a href="#">Request Information</a>
+        <a href="#">Pre-Enrollment</a>
+        <a href="#">Careers &amp; Positions</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2014–2026 International Montessori Academies of USA. All rights reserved.</span>
+    <span>Privacy Policy · Sitemap</span>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  function submitTour() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const campus = document.getElementById('campus').value;
+
+    if (!fname || !email || !campus) {
+      const missing = [];
+      if (!fname) missing.push('first name');
+      if (!email) missing.push('email');
+      if (!campus) missing.push('campus');
+      alert('Please fill in your ' + missing.join(', ') + ' to continue.');
+      return;
+    }
+
+    document.getElementById('formContent').style.display = 'none';
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    document.getElementById('bookingFormWrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Set min date on date picker to today
+  const dateInput = document.getElementById('date');
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  dateInput.min = `${yyyy}-${mm}-${dd}`;
+</script>
+</body>
+</html>
